@@ -24,11 +24,22 @@ namespace Practicing
                     Console.WriteLine($"The divison result is {first / second}!");
                     break;
                 }
-                catch (Exception ex)
+                catch (DivideByZeroException ex)
                 {
-                    Console.WriteLine(ex.Message + "\nTry again! (Press enter to continue...)");
+                    Console.WriteLine(ex.Message + "\nILLEGAL!!! (Press enter to continue...)");
                     Console.ReadLine();
                     Console.Clear();
+                    break;
+                }
+                catch (FormatException ex1)
+                {
+                    Console.WriteLine(ex1.Message + "\nTry again. (Press enter to continue...)");
+                    Console.ReadLine();
+                    Console.Clear();
+                }
+                finally
+                {
+                    Console.WriteLine("dummy");
                 }
             }
         }
